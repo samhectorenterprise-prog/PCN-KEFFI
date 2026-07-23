@@ -8,7 +8,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 254, 254, 0.144)), url(/assets/img/bg-2.png);
   background-size: cover;
   width: 100%;
-  background-repeat: no repeat;
+  background-repeat: no-repeat;
   background-position: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -94,6 +94,8 @@ nav li:first-child {
   justify-content: flex-start;
 }
 
+
+
 .sidebar li {
   width: 100%;
 }
@@ -102,23 +104,27 @@ nav li:first-child {
   display: none;
 }
 
-.home {
+#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+  text-align: center;
 }
 
 .container {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   text-align: center;
+  z-index: 9999;
   z-index: 1;
 }
 
 #home .container img {
   height: 25vh;
   margin-bottom: 30px;
-  border-radius: 70px;
 }
 
 #home .container p,
@@ -144,7 +150,6 @@ nav li:first-child {
 
   .logo a {
     font-size: 10px;
-    color: rgb(0, 0, 0);
     color: red;
     font-weight: 900;
     letter-spacing: 1px;
@@ -161,23 +166,125 @@ nav li:first-child {
   #home .container img {
     height: 15vh;
     margin-bottom: 30px;
-    border-radius: 70px;
+  }
+
+  .social {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 30px;
   }
 
   #home .container p,
   #home .container h1 {
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 120%;
+    width: 100%;
+    margin: 0;
+    display: flex;
     margin-bottom: 3px;
   }
 
 
   .container img {
-    height: 10%;
+    height: 50%;
+  }
+
+  nav {
+    padding: 20px 0;
+  }
+
+  nav ul {
+    margin-left: 0;
+  }
+
+  .sidebar {
+    width: 260px;
+  }
+
+  #home {
+    padding: 120px 20px 50px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  #home .container img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  #home .container h1 {
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  #home .container p {
+    font-size: 20px;
+    text-align: center;
+    text-justify: center;
+  }
+
+  .social {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .social a {
+    text-decoration: none;
+    padding: 10px 20px;
   }
 }
 
-@media(max-width: 300px) {
+@media(max-width: 400px) {
+   nav{
+        padding:15px 0;
+    }
+
+    .logo a{
+        font-size:13px;
+    }
+
+    li img{
+        height:40px;
+    }
+
+    #home{
+        padding:110px 15px 40px;
+    }
+
+    #home .container img{
+        width:120px;
+        height:120px;
+    }
+
+    #home .container h1{
+        font-size:25px;
+        line-height:34px;
+    }
+
+    #home .container p{
+        font-size:17px;
+    }
+
+    .social{
+        flex-direction:column;
+        align-items:center;
+        gap:12px;
+    }
+
+    .social a{
+        width:180px;
+        text-align:center;
+    }
+
   .sidebar {
     width: 90%;
   }
@@ -194,13 +301,62 @@ nav li:first-child {
     padding-left: 40px;
   }
 
+  #home .container h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3px;
+  }
+
   /* body {
     background-image: none;
   } */
 }
 
+@media(max-width:320px){
+
+    .logo a{
+        font-size:11px;
+    }
+
+    #home .container h1{
+        font-size:20px;
+    }
+
+    #home .container p{
+        font-size:15px;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+}
+
+
 button {
-  box-shadow: 0 8px 0 darker;
+  box-shadow: 0 8px 0 #111;
   background-color: #1F1F1F;
   color: white;
+}
+
+/* =========================
+   RESPONSIVE IMPROVEMENTS
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
 }

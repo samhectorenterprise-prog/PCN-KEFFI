@@ -1,6 +1,8 @@
     function showSidebar(){
-      const sideBar = document.querySelector(".sidebar").style.display = "flex"
+      const sideBar = document.querySelector(".sidebar").style.display = "flex";
     }
     function hideSidebar(){
-      const sideBar = document.querySelector(".sidebar").style.display = "none"
+      const sideBar = document.querySelector(".sidebar").style.display = "none";
     }
+
+    
