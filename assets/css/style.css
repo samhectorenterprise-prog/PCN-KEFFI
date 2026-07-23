@@ -191,12 +191,10 @@ nav li:first-child {
     height: 50%;
   }
 
-  nav {
-    padding: 20px 0;
-  }
 
   nav ul {
-    margin-left: 0;
+    margin-left: -50px;
+    padding-left: 0%;
   }
 
   .sidebar {
