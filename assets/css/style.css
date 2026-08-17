@@ -14,12 +14,14 @@ nav {
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   width: 100%;
-  padding: 24px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
   position: fixed;
 }
 
 .main-nav {
-  display: flex;
+  width: 100%;
 }
 
 nav ul {
@@ -28,9 +30,7 @@ nav ul {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-left: 15px;
 }
-
 
 nav li {
   height: 60px;
@@ -38,7 +38,11 @@ nav li {
 
 li img {
   margin-right: 10px;
-  height: 70px;
+  height: 60px;
+}
+
+.logo {
+  margin-right: auto;
 }
 
 .logo a {
@@ -88,8 +92,6 @@ nav li:first-child {
   padding: 5px;
 }
 
-
-
 .sidebar li {
   width: 100%;
   display: block;
@@ -101,9 +103,19 @@ nav li:first-child {
   padding-left: 4px;
 }
 
+.main-nav .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+}
+
+.main-nav .nav-link a {
+  padding: 0 16px;
+}
 
 .menu-btn {
-  display: block;
+  display: none;
   margin-right: -100px;
 }
 
@@ -111,7 +123,7 @@ nav li:first-child {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 254, 254, 0.144)), url(/assets/img/bg-2.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 254, 254, 0.144)), url(/assets/img/b.g.jpeg);
   background-size: cover;
   width: 100%;
   background-repeat: no-repeat;
@@ -420,12 +432,25 @@ footer marquee {
     padding: 15px 0;
   }
 
+  .main-nav {
+    justify-content: space-between;
+  }
+
+  .main-nav .nav-link {
+    display: none;
+  }
+
   .logo a {
     font-size: 13px;
   }
 
   li img {
     height: 40px;
+  }
+
+  .menu-btn {
+    display: block;
+    margin-right: 10px;
   }
 
   #home {
