@@ -10,7 +10,8 @@ body {
 }
 
 nav {
-  background-color: white;
+  background-color: rgba(255, 255, 255);
+  /* backdrop-filter: blur(10px); */
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   width: 100%;
@@ -203,19 +204,49 @@ nav li:first-child {
   font-size: 0.95rem;
 }
 
-/* small button used on homepage gallery */
+/* Shared action buttons */
 .btn {
   display: inline-block;
   margin-top: 10px;
-  padding: 8px 12px;
+  padding: 10px 14px;
   background: #1a7a1a;
   color: #fff;
   border-radius: 6px;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-.btn:hover { background: #145d14; }
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.16);
+}
+
+.ticket-btn {
+  background: #1a7a1a;
+}
+
+.ticket-btn:hover {
+  background: #145d14;
+}
+
+.sponsor-btn {
+  background: #fff;
+  border: 1px solid #d89d0d;
+  color: #a36d00;
+}
+
+.sponsor-btn:hover {
+  background: #fff7df;
+}
+
+.product-card .btn {
+  display: block;
+  width: auto;
+}
 
 /* Products card styles */
 .products-section {
@@ -361,7 +392,6 @@ a {
   color: #FF7305;
   text-align: center;
 }
-
 
 .text-content h1 {
   text-align: center;
