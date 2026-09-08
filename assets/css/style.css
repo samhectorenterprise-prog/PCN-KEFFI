@@ -6,13 +6,13 @@
 
 body {
   min-height: 100vh;
-
+  background: #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 nav {
-  background-color: rgba(255, 255, 255);
-  /* backdrop-filter: blur(10px); */
+  background-color: rgba(255, 255, 255, 0.678);
+  backdrop-filter: blur(10px);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   width: 100%;
@@ -85,9 +85,11 @@ nav li:first-child {
   top: 0;
   right: 0;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-left: 1px solid rgba(18, 107, 50, 0.12);
+  box-shadow: -10px 0 24px rgba(0, 0, 0, 0.12);
   display: none;
   width: 30%;
   flex-direction: column;
@@ -106,6 +108,18 @@ nav li:first-child {
 
 .sidebar li a {
   padding-left: 4px;
+}
+
+.sidebar .menu {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 12px;
+}
+
+.sidebar .menu img {
+  width: 28px;
+  height: 28px;
+  margin: 0;
 }
 
 .main-nav .nav-link {
@@ -137,13 +151,66 @@ nav li:first-child {
 }
 
 #about {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 254, 254, 0.144));
+  padding: 150px 24px 80px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.9)), url('../img/b.g.jpeg');
   background-size: cover;
-  width: 100%;
-  background-repeat: no-repeat;
   background-position: center;
-  min-height: 100vh;
-  text-align: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  color: #243229;
+}
+
+.about-plc {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.about-plc > br {
+  display: none;
+}
+
+.about-we {
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 8px;
+  background: transparent;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  color: #243229;
+  text-align: left;
+}
+
+.about-we h1 {
+  margin-bottom: 16px;
+  color: #126b32;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  text-align: left;
+}
+
+.about-we p {
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.about-plc > .about-we:first-child {
+  grid-column: span 2;
+}
+
+.about-plc > .about-we:nth-child(2) {
+  grid-column: span 1;
+}
+
+.about-plc > .about-we:nth-child(2) > .about-we {
+  margin-top: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 #about-event {
@@ -292,6 +359,61 @@ nav li:first-child {
   padding: 12px 14px 18px;
 }
 
+.payment-page {
+  min-height: 100vh;
+  padding: 150px 20px 80px;
+  background: #fff;
+}
+
+.payment-panel {
+  width: min(620px, 100%);
+  margin: 0 auto;
+  padding: clamp(24px, 5vw, 48px);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.payment-panel h1 {
+  margin-bottom: 12px;
+  color: #126b32;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.payment-panel > p {
+  color: #5c685f;
+  line-height: 1.6;
+}
+
+.bank-details {
+  display: grid;
+  gap: 14px;
+  margin: 28px 0;
+  padding: 24px;
+  border-left: 4px solid #e07b16;
+  background: #f4f8f2;
+  text-align: left;
+}
+
+.bank-detail {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #5c685f;
+}
+
+.bank-detail strong {
+  color: #17211a;
+  text-align: right;
+}
+
+.payment-note {
+  margin-bottom: 20px;
+  color: #5c685f;
+  font-size: 0.95rem;
+}
+
 .product-card .product-name {
   margin: 6px 0;
   color: #1a7a1a;
@@ -306,6 +428,19 @@ nav li:first-child {
 
 @media (max-width: 600px) {
   .product-card { flex: 0 1 100%; max-width: none; }
+
+  .payment-page {
+    background: #fff;
+  }
+
+  .bank-detail {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .bank-detail strong {
+    text-align: left;
+  }
 }
 
 
@@ -394,6 +529,39 @@ a {
   font-family: popins 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: #FF7305;
   text-align: center;
+}
+
+.promo-banner {
+  display: grid;
+  gap: 4px;
+  width: min(100%, 420px);
+  margin: 18px auto 8px;
+  padding: 14px 18px;
+  border: 2px solid #e07b16;
+  border-radius: 8px;
+  background: rgba(255, 250, 242, 0.96);
+  color: #17211a;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.promo-banner strong {
+  color: #000000;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+}
+
+.promo-banner span {
+  font-size: 1.20rem;
+  text-transform: uppercase;
+  color: #126b32;
+  font-weight: 800;
+}
+
+.promo-banner a {
+  color: blue;
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 .text-content h1 {
@@ -492,7 +660,8 @@ footer marquee {
   }
 
   .sidebar {
-    width: 90%;
+    width: min(360px, 86%);
+    background-color: rgba(255, 255, 255, 0.97);
   }
 
   #home .container img {
@@ -508,7 +677,8 @@ footer marquee {
   }
 
   #about {
-    padding-top: 500px;
+    padding: 120px 16px 50px;
+    background-attachment: scroll;
   }
 
   #home .container p {
@@ -539,30 +709,22 @@ footer marquee {
     padding: 10px 20px;
   }
 
-  .about-container {
-    height: 100%;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    flex-direction: column;
-    margin-top: -390px;
+  .about-plc {
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
-  .about-us {
-    margin: 20px;
+  .about-plc > .about-we:first-child,
+  .about-plc > .about-we:nth-child(2) {
+    grid-column: auto;
   }
 
-  .about-us h1 {
-    text-transform: uppercase;
-    color: green;
+  .about-we {
+    padding: 22px;
   }
 
-  .about-us p {
-    text-align: justify;
-    font-size: 20px;
-    padding: 0 10px;
+  .about-we p {
+    font-size: 0.98rem;
   }
 
 
