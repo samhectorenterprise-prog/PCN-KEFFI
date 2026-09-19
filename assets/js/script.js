@@ -5,6 +5,15 @@
       const sideBar = document.querySelector(".sidebar").style.display = "none"
     }
 
+    const loader = document.getElementById("welcomeLoader");
+    if (loader) {
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          document.body.classList.add("loaded");
+        }, 1200);
+      });
+    }
+
     const eventDate = new Date("2026-10-24T23:59:59");
     const countdownEls = {
       days: document.getElementById("days"),
@@ -14,6 +23,10 @@
     };
 
     function updateCountdown() {
+      if (!countdownEls.days || !countdownEls.hours || !countdownEls.minutes || !countdownEls.seconds) {
+        return;
+      }
+
       const now = new Date();
       const difference = eventDate - now;
 
@@ -38,7 +51,9 @@
       countdownEls.seconds.textContent = String(seconds).padStart(2, "0");
     }
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+    if (countdownEls.days && countdownEls.hours && countdownEls.minutes && countdownEls.seconds) {
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    }
 
     
